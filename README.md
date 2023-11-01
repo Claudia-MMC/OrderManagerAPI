@@ -63,35 +63,44 @@ To run the Order Manager API, you will need the following technologies and tools
    ```bash
    ./mvnw spring-boot:run
 
-API Routes
+## API Routes
+
 The API offers a set of routes to interact with the system:
 
-Order Routes
-Create Order: POST /order
-Get Order by ID: GET /order/{id}
-Update Order by ID: PUT /order/{id}
-Delete Order by ID: DELETE /order/{id}
-List All Orders: GET /order
-Item Routes
-Create Item: POST /item
-Get Item by ID: GET /item/{id}
-Update Item by ID: PUT /item/{id}
-Delete Item by ID: DELETE /item/{id}
-List All Items: GET /item
-Stock Movement Routes
-Create Stock Movement: POST /stock-movement
-Get Stock Movement by ID: GET /stock-movement/{id}
-Update Stock Movement by ID: PUT /stock-movement/{id}
-Delete Stock Movement by ID: DELETE /stock-movement/{id}
-List All Stock Movements: GET /stock-movement
-User Routes
-Create User: POST /user
-Get User by ID: GET /user/{id}
-Update User by ID: PUT /user/{id}
-Delete User by ID: DELETE /user/{id}
-List All Users: GET /user
+### Order Routes
 
-Unit Testing
+- **Create Order**: `POST /order`
+- **Get Order by ID**: `GET /order/{id}`
+- **Update Order by ID**: `PUT /order/{id}`
+- **Delete Order by ID**: `DELETE /order/{id}`
+- **List All Orders**: `GET /order`
+
+### Item Routes
+
+- **Create Item**: `POST /item`
+- **Get Item by ID**: `GET /item/{id}`
+- **Update Item by ID**: `PUT /item/{id}`
+- **Delete Item by ID**: `DELETE /item/{id}`
+- **List All Items**: `GET /item`
+
+### Stock Movement Routes
+
+- **Create Stock Movement**: `POST /stock-movement`
+- **Get Stock Movement by ID**: `GET /stock-movement/{id}`
+- **Update Stock Movement by ID**: `PUT /stock-movement/{id}`
+- **Delete Stock Movement by ID**: `DELETE /stock-movement/{id}`
+- **List All Stock Movements**: `GET /stock-movement`
+
+### User Routes
+
+- **Create User**: `POST /user`
+- **Get User by ID**: `GET /user/{id}`
+- **Update User by ID**: `PUT /user/{id}`
+- **Delete User by ID**: `DELETE /user/{id}`
+- **List All Users**: `GET /user`
+- 
+## Unit Testing
+
 To ensure the robustness of the Order Manager API, the project includes comprehensive unit tests for the service and controller components. These tests validate the functionality and behavior of the API, providing confidence in its reliability.
 
 You can run the unit tests using your preferred testing framework or the one integrated with your development environment.
