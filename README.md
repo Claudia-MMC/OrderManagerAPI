@@ -56,9 +56,11 @@ To run the Order Manager API, you will need the following technologies and tools
    git clone https://github.com/yourusername/order-manager.git
 
 2. Navigate to the project directory:
+   ```bash
    cd order-manager
    
 4. Build and run the project:
+   ```bash
    ./mvnw spring-boot:run
 
 API Routes
