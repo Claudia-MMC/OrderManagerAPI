@@ -3,15 +3,12 @@ package com.exercise.ordermanager.service;
 import com.exercise.ordermanager.dto.ItemDTO;
 import com.exercise.ordermanager.entity.Item;
 import com.exercise.ordermanager.repository.ItemRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 

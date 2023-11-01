@@ -21,7 +21,7 @@ public class StockMovementController {
     @GetMapping(value = "/{id}")
     public ResponseEntity<StockMovementDTO> findById(@PathVariable(name = "id") Long id) {
         StockMovementDTO createdStockMovement = stockMovementService.findById(id);
-        if(Objects.nonNull(createdStockMovement)) {
+        if (Objects.nonNull(createdStockMovement)) {
             return ResponseEntity.ok().body(createdStockMovement);
         } else {
             return ResponseEntity.notFound().build();
@@ -43,7 +43,7 @@ public class StockMovementController {
     @PutMapping(value = "/{id}")
     public ResponseEntity<StockMovementDTO> update(@PathVariable(name = "id") Long id, @RequestBody StockMovementDTO stockMovementDTO) {
         StockMovementDTO createdStockMovement = stockMovementService.update(id, stockMovementDTO);
-        if(Objects.nonNull(createdStockMovement)) {
+        if (Objects.nonNull(createdStockMovement)) {
             return ResponseEntity.ok().body(createdStockMovement);
         } else {
             return ResponseEntity.notFound().build();

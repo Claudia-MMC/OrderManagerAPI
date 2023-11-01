@@ -11,5 +11,6 @@ import java.util.List;
 @Repository
 public interface StockMovementRepository extends JpaRepository<StockMovement, Long> {
     StockMovement findByItem(Item item);
+
     List<StockMovement> findByOrder(Order order);
 }

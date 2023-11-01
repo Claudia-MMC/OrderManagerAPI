@@ -10,8 +10,6 @@ public interface ItemService {
 
     List<ItemDTO> findAll();
 
-    ItemDTO findByName(String name);
-
     ItemDTO register(ItemDTO itemDTO);
 
     ItemDTO update(Long id, ItemDTO itemDTO);

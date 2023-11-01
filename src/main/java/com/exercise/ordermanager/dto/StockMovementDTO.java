@@ -6,6 +6,7 @@ import com.exercise.ordermanager.entity.StockMovement;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+
 @Data
 public class StockMovementDTO {
     private Long id;

@@ -19,7 +19,7 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<ItemDTO> findById(@PathVariable(name = "id") Long id){
+    public ResponseEntity<ItemDTO> findById(@PathVariable(name = "id") Long id) {
         ItemDTO createdItemDTO = itemService.findById(id);
         if (Objects.nonNull(createdItemDTO)) {
             return ResponseEntity.ok().body(itemService.findById(id));
@@ -43,7 +43,7 @@ public class ItemController {
     @PutMapping(value = "/{id}")
     public ResponseEntity<ItemDTO> update(@PathVariable(name = "id") Long id, @RequestBody ItemDTO itemRequestDTO) {
         ItemDTO createdItemDTO = itemService.update(id, itemRequestDTO);
-        if(Objects.nonNull(createdItemDTO)) {
+        if (Objects.nonNull(createdItemDTO)) {
             return ResponseEntity.ok().body(itemService.update(id, itemRequestDTO));
         } else {
             return ResponseEntity.notFound().build();

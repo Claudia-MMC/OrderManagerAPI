@@ -36,7 +36,7 @@ public class ItemMapper {
                 .collect(Collectors.toList());
     }
 
-    public static void updateItem(Item existingItem, ItemDTO itemDTO){
+    public static void updateItem(Item existingItem, ItemDTO itemDTO) {
         existingItem.setName(itemDTO.getName());
     }
 }

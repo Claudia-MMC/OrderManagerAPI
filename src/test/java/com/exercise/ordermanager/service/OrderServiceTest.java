@@ -1,12 +1,6 @@
 package com.exercise.ordermanager.service;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-
-
 import com.exercise.ordermanager.dto.OrderDTO;
-import com.exercise.ordermanager.dto.UserDTO;
 import com.exercise.ordermanager.entity.Item;
 import com.exercise.ordermanager.entity.Order;
 import com.exercise.ordermanager.entity.StockMovement;
@@ -14,19 +8,20 @@ import com.exercise.ordermanager.entity.User;
 import com.exercise.ordermanager.mapper.UserMapper;
 import com.exercise.ordermanager.repository.ItemRepository;
 import com.exercise.ordermanager.repository.OrderRepository;
-import com.exercise.ordermanager.repository.StockMovementRepository;
-import org.hibernate.ObjectNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 @SpringBootTest
 public class OrderServiceTest {
@@ -37,6 +32,9 @@ public class OrderServiceTest {
     private OrderRepository orderRepository;
     @Mock
     private ItemRepository itemRepository;
+
+    @Mock
+    private EmailService emailService;
 
     @Mock
     private StockMovementServiceImpl stockMovementService;

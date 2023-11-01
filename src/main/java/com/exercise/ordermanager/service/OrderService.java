@@ -12,7 +12,7 @@ public interface OrderService {
 
     List<OrderDTO> findAll();
 
-    OrderDTO register (OrderDTO orderDTO);
+    OrderDTO register(OrderDTO orderDTO);
 
     OrderDTO update(Long id, OrderDTO orderDTO);
 

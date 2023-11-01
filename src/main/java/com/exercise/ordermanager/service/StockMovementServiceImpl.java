@@ -77,7 +77,7 @@ public class StockMovementServiceImpl implements StockMovementService {
     public StockMovementDTO update(Long id, StockMovementDTO stockMovementDTO) {
         try {
             StockMovement stockMovement = returnStockMovement(id);
-            if(Objects.nonNull(stockMovement)) {
+            if (Objects.nonNull(stockMovement)) {
                 stockMovementMapper.update(stockMovement, stockMovementDTO);
                 logger.info("Stock movement updated. ID: " + id);
                 return stockMovementMapper.toStockMovementDTO(stockMovementRepository.save(stockMovement));
@@ -94,13 +94,13 @@ public class StockMovementServiceImpl implements StockMovementService {
     @Override
     public String delete(Long id) {
         try {
-            if(stockMovementRepository.existsById(id)) {
+            if (stockMovementRepository.existsById(id)) {
                 stockMovementRepository.deleteById(id);
                 logger.info("Stock movement deleted. ID: " + id);
-                return "Stock Movement id:" +id+ "successfully deleted";
+                return "Stock Movement id:" + id + "successfully deleted";
             } else {
                 logger.error("Stock Movement not found. ID: " + id);
-                return "Stock Movement id:" +id+ "not found";
+                return "Stock Movement id:" + id + "not found";
             }
         } catch (Exception e) {
             logger.error("Error deleting stock Movement: " + e.getMessage(), e);
@@ -108,13 +108,13 @@ public class StockMovementServiceImpl implements StockMovementService {
         }
     }
 
-    private StockMovement returnStockMovement(Long id){
-        return stockMovementRepository.findById(id).orElseThrow(()-> new RuntimeException("Stock Movement not found"));
+    private StockMovement returnStockMovement(Long id) {
+        return stockMovementRepository.findById(id).orElseThrow(() -> new RuntimeException("Stock Movement not found"));
     }
 
     private void attributeStockMovementToOrder(StockMovement stockMovement) {
         List<Order> incompleteOrders = orderService.findIncompleteOrders();
-        for(Order order: incompleteOrders) {
+        for (Order order : incompleteOrders) {
             if (order.getItem().equals(stockMovement.getItem()) && order.getQuantity() <= stockMovement.getQuantity()) {
                 order.setCompleted(true);
                 orderRepository.save(order);

@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
     public UserDTO update(Long id, UserDTO userDTO) {
         try {
             User user = returnUser(id);
-            if(Objects.nonNull(user)) {
+            if (Objects.nonNull(user)) {
                 UserMapper.update(user, userDTO);
                 logger.info("User updated. ID: " + user.getId());
                 return UserMapper.userToUserDto(userRepository.save(user));
@@ -64,13 +64,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public String delete(Long id) {
         try {
-            if(userRepository.existsById(id)) {
+            if (userRepository.existsById(id)) {
                 userRepository.deleteById(id);
                 logger.info("User deleted. ID: " + id);
-                return "User id:" +id+ "successfully deleted";
+                return "User id:" + id + "successfully deleted";
             } else {
                 logger.error("User not found. ID: " + id);
-                return "User id:" +id+ "not found";
+                return "User id:" + id + "not found";
             }
         } catch (Exception e) {
             logger.error("Error deleting user: " + e.getMessage(), e);
@@ -79,6 +79,6 @@ public class UserServiceImpl implements UserService {
     }
 
     private User returnUser(Long id) {
-        return userRepository.findById(id).orElseThrow(()-> new RuntimeException("Stock Movement not found"));
+        return userRepository.findById(id).orElseThrow(() -> new RuntimeException("Stock Movement not found"));
     }
 }

@@ -26,7 +26,7 @@ public class StockMovementMapper {
         return stockMovements.stream().map(StockMovementDTO::new).collect(Collectors.toList());
     }
 
-    public void update(StockMovement stockMovement, StockMovementDTO stockMovementDTO){
+    public void update(StockMovement stockMovement, StockMovementDTO stockMovementDTO) {
         stockMovement.setId(stockMovementDTO.getId());
         stockMovement.setItem(stockMovementDTO.getItem());
         stockMovement.setQuantity(stockMovementDTO.getQuantity());

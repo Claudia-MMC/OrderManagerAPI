@@ -1,16 +1,13 @@
 package com.exercise.ordermanager.mapper;
 
-import com.exercise.ordermanager.dto.ItemDTO;
 import com.exercise.ordermanager.dto.OrderDTO;
 import com.exercise.ordermanager.dto.UserDTO;
 import com.exercise.ordermanager.entity.Item;
 import com.exercise.ordermanager.entity.Order;
 import com.exercise.ordermanager.entity.User;
-import org.junit.Before;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.mock;
 
 public class OrderMapperTest {
 

@@ -27,9 +27,6 @@ public class ItemServiceImpl implements ItemService {
         return ItemMapper.itemToItemDto(returnItem(id));
     }
 
-    public ItemDTO findByName(String name) {
-        return ItemMapper.itemToItemDto(itemRepository.findByName(name));
-    }
 
     @Override
     public List<ItemDTO> findAll() {
@@ -52,7 +49,7 @@ public class ItemServiceImpl implements ItemService {
     public ItemDTO update(Long id, ItemDTO itemDTO) {
         try {
             Item item = returnItem(id);
-            if(Objects.nonNull(item)) {
+            if (Objects.nonNull(item)) {
                 ItemMapper.updateItem(item, itemDTO);
                 logger.info("Item updated. ID: " + item.getId());
                 return ItemMapper.itemToItemDto(itemRepository.save(item));
@@ -69,13 +66,13 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public String delete(Long id) {
         try {
-            if(itemRepository.existsById(id)) {
+            if (itemRepository.existsById(id)) {
                 itemRepository.deleteById(id);
                 logger.info("Item deleted. ID: " + id);
-                return "Item id:" +id+ "successfully deleted";
+                return "Item id:" + id + "successfully deleted";
             } else {
                 logger.error("Item not found. ID: " + id);
-                return "Item id:" +id+ "not found";
+                return "Item id:" + id + "not found";
             }
         } catch (Exception e) {
             logger.error("Error deleting item: " + e.getMessage(), e);
@@ -84,6 +81,6 @@ public class ItemServiceImpl implements ItemService {
     }
 
     private Item returnItem(Long id) {
-        return itemRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Item not found"));
+        return itemRepository.findById(id).orElseThrow(() -> new EntityNotFoundException("Item not found"));
     }
 }
