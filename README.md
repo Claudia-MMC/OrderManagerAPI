@@ -63,6 +63,26 @@ To run the Order Manager API, you will need the following technologies and tools
    ```bash
    ./mvnw spring-boot:run
 
+## Email Configuration
+
+To enable email notifications in the Order Manager API, you need to configure the email settings. Follow these steps to set up the email configuration:
+
+1. Open the `application.properties` file located in the `src/main/resources` directory of the project.
+
+2. Locate the email-related properties in the configuration file.
+
+3. Update these properties with your email server details:
+
+   ```properties
+   # Email
+   spring.mail.host=host
+   spring.mail.port=587
+   spring.mail.username=username
+   spring.mail.password=password
+
+4. Save the changes to the application.properties file.
+Now, the Order Manager API is configured to send email notifications using the specified email server. Make sure to secure your email credentials and avoid committing sensitive information to version control.
+
 ## API Routes
 
 The API offers a set of routes to interact with the system:
